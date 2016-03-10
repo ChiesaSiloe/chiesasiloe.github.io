@@ -3,6 +3,34 @@ layout: default
 ---
 
 <div class="row">
-  <div class="col-md-8">.col-md-8</div>
-  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-8">
+    <!-- This loops through the paginated posts -->
+    {% for post in paginator.posts %}
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+      <p class="author">
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <span class="date">{{ post.date | date: "%d/%m/%Y" }}</span>
+      </p>
+      <div class="content">
+        {{ post.excerpt }}
+        <a href="{{ post.url }}">Continua ...</a>
+      </div>
+      <hr>
+    {% endfor %}
+    
+    <!-- Pagination links -->
+    <nav>
+      <ul class="pager">
+        {% if paginator.previous_page %}
+          <li class="previous"><a href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Precedente</a></li>
+        {% else %}
+          <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Precedente</a></li>
+        {% endif %}
+        {% if paginator.next_page %}
+          <li class="next"><a href="{{ paginator.next_page_path }}" class="next">Prossima <span aria-hidden="true">&rarr;</span></a></li>
+        {% else %}
+          <li class="next disabled"><a href="#">Prossima <span aria-hidden="true">&rarr;</span></a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
 </div>
