@@ -8,25 +8,25 @@ layout: default
       <!-- Indicators -->
       <ol class="carousel-indicators">
         {% for file in site.collections.slideshow.files %}
-          {% if forloop.index0 == 0 %}
-            <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}" class="active"></li>
-          {% endif %}
-            <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}"></li>
-          {% else %}
+        {% if forloop.index0 == 0 %}
+        <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}" class="active"></li>
+        {% endif %}
+        <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}"></li>
+        {% else %}
         {% endfor %}
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         {% for image in site.collections.slideshow.files %}
-          {% if forloop.index0 == 0 %}
-            <div class="item active">
-              <img src="{{ image.path | replace_first:'/_','' }}" alt="...">
-            </div>
-          {% else %}
-            <div class="item">
-              <img src="{{ image.path | replace_first:'/_','' }}" alt="...">
-            </div>
-          {% endif %}
+        {% if forloop.index0 == 0 %}
+        <div class="item active">
+          <img src="{{ image.path | replace_first:'/_','' }}" alt="...">
+        </div>
+        {% else %}
+        <div class="item">
+          <img src="{{ image.path | replace_first:'/_','' }}" alt="...">
+        </div>
+        {% endif %}
         {% endfor %}
       </div>
       <!-- Controls -->
@@ -49,28 +49,25 @@ layout: default
     <div class="jumbotron">
       <h1 align="center">Benvenuto nel nuovo sito della Chiesa Siloe</h1>
     </div>
+    <hr>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-8">
     <!-- This loops through the paginated posts -->
-    <div class="panel panel-default">
-      <div class="panel-heading"><h3>Ultime notizie</h3></div>
-      <div class="panel-body">
-        {% for post in site.posts limit:3 %}
-          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-          <p class="author">
-            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <span class="date">{{ post.date | date: "%d/%m/%Y" }}</span>
-          </p>
-          <div class="content">
-            {{ post.excerpt }}
-            <a href="{{ post.url }}">Continua ...</a>
-          </div>
-          <hr>
-        {% endfor %}
+    {% for post in site.posts limit:3 %}
+    <div class="media">
+      <div class="media-left">
+        <img class="media-object media-thumb" src="{{ post.cover }}">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+        {{ post.summary }}
       </div>
     </div>
+    <hr>
+    {% endfor %}
   </div>
   <div class="col-md-4">
     {% include sidebar.html %}
