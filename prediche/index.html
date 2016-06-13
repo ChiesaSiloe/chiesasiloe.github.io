@@ -1,0 +1,38 @@
+---
+layout: twocolumns
+---
+
+<table class="table">
+  <tr>
+    <td><b>Data</b></td>
+    <td><b>Titolo</b></td>
+    <td><b>Relatore</b></td>
+    <td><b>Link</b></td>
+  </tr>
+
+  {% assign sermons = site.data.sermons %}
+
+  {% for sermon in sermons %}
+  <tr>
+    <td>
+      <p>{{ sermon.data }}<p>
+      </td>
+      <td>
+        <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample">
+          {{ sermon.data | date:"%U"}} {{ sermon.titolo }}
+        </p>
+        <div class="collapse" id="collapse-{{sermon.data}}">
+          <p class="text-muted">
+           {{ sermon.descrizione }}
+          </p>
+        </div>
+      </td>
+    <td>
+      <p>{{ sermon.relatore }}</p>
+    </td>
+    <td>
+      <p><a href="{{ sermon.link }}" target="_blank">Link</a></p>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
