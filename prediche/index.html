@@ -10,28 +10,31 @@ layout: twocolumns
     <td><b>Link</b></td>
   </tr>
 
-  {% assign sermons = site.data.sermons %}
+  {% assign sermons = site.data.sermons.size  %}
 
-  {% for sermon in sermons %}
+  {% for sermon in (1..sermons) reversed %}
+  {% if sermon == site.data.sermons.size %}
+    {% continue %}
+  {% endif %}
   <tr>
     <td>
-      <p>{{ sermon.data }}<p>
+      <p>{{ site.data.sermons[sermon].data }}<p>
       </td>
       <td>
-        <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample">
-          {{ sermon.data | date:"%U"}} {{ sermon.titolo }}
+        <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{site.data.sermons[sermon].data}}" aria-expanded="false" aria-controls="collapseExample">
+          {{ site.data.sermons[sermon].data | date:"%U"}} {{ site.data.sermons[sermon].titolo }}
         </p>
-        <div class="collapse" id="collapse-{{sermon.data}}">
+        <div class="collapse" id="collapse-{{site.data.sermons[sermon].data}}">
           <p class="text-muted">
-           {{ sermon.descrizione }}
+           {{ site.data.sermons[sermon].descrizione }}
           </p>
         </div>
       </td>
     <td>
-      <p>{{ sermon.relatore }}</p>
+      <p>{{ site.data.sermons[sermon].relatore }}</p>
     </td>
     <td>
-      <p><a href="{{ sermon.link }}" target="_blank">Link</a></p>
+      <p><a href="{{ site.data.sermons[sermon].link }}" target="_blank">Link</a></p>
     </td>
   </tr>
   {% endfor %}
