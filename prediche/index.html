@@ -2,40 +2,68 @@
 layout: twocolumns
 ---
 
-<table class="table">
-  <tr>
-    <td><b>Data</b></td>
-    <td><b>Titolo</b></td>
-    <td><b>Relatore</b></td>
-    <td><b>Link</b></td>
-  </tr>
+{% assign start = false %}
 
-  {% assign sermons = site.data.sermons.size  %}
-
-  {% for sermon in (1..sermons) reversed %}
-  {% if sermon == site.data.sermons.size %}
-    {% continue %}
-  {% endif %}
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+{% for sermon in site.data.sermons reversed %}
+{% capture curYear %} {{ sermon.data | date: '%Y' }} {% endcapture %}
+{% if curYear == year %}
+  {% if start == true %}
   <tr>
     <td>
-      <p>{{ site.data.sermons[sermon].data }}<p>
+      <p>{{ sermon.data }}<p>
       </td>
       <td>
-        <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{site.data.sermons[sermon].data}}" aria-expanded="false" aria-controls="collapseExample">
-          {{ site.data.sermons[sermon].data | date:"%U"}} {{ site.data.sermons[sermon].titolo }}
+        <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample">
+          {{ sermon.data | date:"%U"}} {{ sermon.titolo }}
         </p>
-        <div class="collapse" id="collapse-{{site.data.sermons[sermon].data}}">
+        <div class="collapse" id="collapse-{{sermon.data}}">
           <p class="text-muted">
-           {{ site.data.sermons[sermon].descrizione }}
+           {{ sermon.descrizione }}
           </p>
         </div>
       </td>
     <td>
-      <p>{{ site.data.sermons[sermon].relatore }}</p>
+      <p>{{ sermon.relatore }}</p>
     </td>
     <td>
-      <p><a href="{{ site.data.sermons[sermon].link }}" target="_blank">Link</a></p>
+      <p><a href="{{ sermon.link }}" target="_blank">Link</a></p>
     </td>
   </tr>
-  {% endfor %}
+  {% endif %}
+{% else %}
+  {% if start == false %}
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading-{{ curYear | strip }}">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ curYear | strip }}" aria-expanded="true" aria-controls="collapse-{{ curYear | strip }}">
+          Prediche {{ curYear }}
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-{{ curYear | strip }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-{{ curYear | strip }}">
+      <div class="panel-body">
+        <table class="table">
+          <tr>
+            <td><b>Data</b></td>
+            <td><b>Titolo</b></td>
+            <td><b>Relatore</b></td>
+            <td><b>Link</b></td>
+          </tr>
+        {% assign start = true %}
+        {% capture year %} {{ sermon.data | date: '%Y' }} {% endcapture %}
+        {% continue %}
+  {% else %}
+  {% assign start = false %}
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+{% endif %}
+{% endfor %}
 </table>
+</div>
+</div>
+</div>
+</div>
