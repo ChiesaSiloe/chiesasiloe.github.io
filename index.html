@@ -57,13 +57,13 @@ layout: default
   <div class="col-md-8">
     <!-- This loops through the paginated posts -->
     {% for post in site.posts limit:3 %}
-    <div class="media">
-      <div class="media-left">
-        <img class="media-object media-thumb" src="{{ post.cover }}">
+    <div class="row">
+      <div class="col-sm-3 col-md-3">
+        <img class="img-responsive img-thumbnail" src="{{ post.cover }}">
       </div>
-      <div class="media-body">
-        <h4 class="media-heading"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-        {{ post.summary }}
+      <div class="col-sm-9 col-md-9">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <h4>{{ post.summary }}</h4>
       </div>
     </div>
     <hr>
