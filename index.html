@@ -7,13 +7,16 @@ layout: default
     <div id="slideshow" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        {% for file in site.collections.slideshow.files %}
+        {% for file in site.slideshow.files %}
         {% if forloop.index0 == 0 %}
         <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}" class="active"></li>
         {% endif %}
         <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}"></li>
         {% else %}
         {% endfor %}
+
+        <li data-target="#slideshow" data-slide-to="#slideshow1" class="active"></li>
+        <li data-target="#slideshow" data-slide-to="#slideshow2"></li>
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
@@ -28,6 +31,12 @@ layout: default
         </div>
         {% endif %}
         {% endfor %}
+        <div class="item active">
+          <img src="/slideshow/slider-gospel-F.png" alt="...">
+        </div>
+        <div class="item">
+          <img src="/slideshow/sllide_1.png" alt="...">
+        </div>
       </div>
       <!-- Controls -->
       <a class="left carousel-control" href="#slideshow" role="button" data-slide="prev">
