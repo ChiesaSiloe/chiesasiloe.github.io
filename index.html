@@ -7,30 +7,12 @@ layout: default
     <div id="slideshow" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        {% for file in site.slideshow.files %}
-        {% if forloop.index0 == 0 %}
-        <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}" class="active"></li>
-        {% endif %}
-        <li data-target="#slideshow" data-slide-to="{{ forloop.index0 }}"></li>
-        {% else %}
-        {% endfor %}
-
-        <li data-target="#slideshow" data-slide-to="#slideshow1" class="active"></li>
-        <li data-target="#slideshow" data-slide-to="#slideshow2"></li>
+        <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+        <li data-target="#slideshow" data-slide-to="1"></li>
+        <li data-target="#slideshow" data-slide-to="2"></li>
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
-        {% for image in site.collections.slideshow.files %}
-        {% if forloop.index0 == 0 %}
-        <div class="item active">
-          <img src="{{ image.path | replace_first:'/_','' }}" alt="...">
-        </div>
-        {% else %}
-        <div class="item">
-          <img src="{{ image.path | replace_first:'/_','' }}" alt="...">
-        </div>
-        {% endif %}
-        {% endfor %}
         <div class="item active">
           <img src="/slideshow/slider-gospel-F.png" alt="...">
         </div>
