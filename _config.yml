@@ -8,7 +8,7 @@
 # Site settings
 title: Chiesa Evangelica Siloe
 email: ufficio@chiesasiloe.it
-description: > Presentiamo la Chiesa Evangelica Siloe di Cosenza, un ministero che è cominciato ormai da diversi anni, siate i benvenuti.
+description: > # Presentiamo la Chiesa Evangelica Siloe di Cosenza, un ministero che è cominciato ormai da diversi anni, siate i benvenuti.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://chiesasiloe.it" # the base hostname & protocol for your site
 
