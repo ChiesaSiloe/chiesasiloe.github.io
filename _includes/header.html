@@ -40,7 +40,7 @@
             {% capture curYear %} {{ sermon.data | date: '%Y' }} {% endcapture %}
             {% if curYear != year %}
               {% capture year %} {{ sermon.data | date: '%Y' }} {% endcapture %}
-              <li><a href="/prediche#collapse-{{ curYear | strip }}">Prediche {{ curYear }}</a></li>
+              <li><a href="/prediche/{{ curYear | strip }}">Prediche {{ curYear }}</a></li>
             {% endif %}
             {% endfor %}
           </ul>
