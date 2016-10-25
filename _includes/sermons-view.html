@@ -14,7 +14,7 @@
         <td><b>Relatore</b></td>
         <td><b>Link</b></td>
       </tr>
-      {% for sermon in site.data.sermons %}
+      {% for sermon in site.data.sermons reversed %}
       {% capture curYear %} {{ sermon.data | date: '%Y' }} {% endcapture %}
 
       {% if curYear contains include.year %}
