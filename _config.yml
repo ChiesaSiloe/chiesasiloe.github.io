@@ -23,4 +23,6 @@ collections:
   slideshow:
     output: true
 
-gems: [jekyll-paginate]
+gems: 
+ - jekyll-paginate
+ - jekyll-sitemap
