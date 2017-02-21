@@ -38,7 +38,10 @@
           <p>{{ sermon.relatore }}</p>
         </td>
         <td>
-          <p><a href="{{ sermon.link }}" target="_blank" onclick="trackOutboundLink('{{ sermon.link }}'); return false;">Link</a></p>
+          <p><a href="{{ sermon.link }}" target="_blank" onclick="trackOutboundLink('{{ sermon.link }}'); return false;">Streaming</a></p>
+        </td>
+        <td>
+          <p><a href="{{ sermon.link }}" target="_blank" onclick="trackOutboundLink('{{ sermon.link }}'); return false;">Download</a></p>
         </td>
       </tr>
       {% endif %}
@@ -55,7 +58,7 @@
 * using 'navigator.sendBeacon' in browser that support it.
 */
 var trackOutboundLink = function(url) {
-   ga('send', 'event', 'outbound', 'click', url, {
+   ('send', 'event', 'outbound', 'click', url, {
      'transport': 'beacon',
      'hitCallback': function(){document.location = url;}
    });
