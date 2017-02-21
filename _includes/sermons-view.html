@@ -12,7 +12,8 @@
         <td><b>Data</b></td>
         <td><b>Titolo</b></td>
         <td><b>Relatore</b></td>
-        <td><b>Link</b></td>
+        <td><b>Streaming</b></td>
+        <td><b>Download</b></td>
       </tr>
       {% for sermon in site.data.sermons reversed %}
       {% capture curYear %} {{ sermon.data | date: '%Y' }} {% endcapture %}
