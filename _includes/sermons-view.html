@@ -39,10 +39,10 @@
           <p>{{ sermon.relatore }}</p>
         </td>
         <td>
-          <p><a href="{{ sermon.Streaming }}" target="_blank" onclick="trackOutboundLink('{{ sermon.streaming }}');" return false >Streaming</a></p>
+          <p><a href="{{ sermon.streaming }}" target="_blank" onclick="trackOutboundLink('{{ sermon.streaming }}'); return false;" >Streaming</a></p>
         </td>
         <td>
-          <p><a href="{{ sermon.Download }}" target="_blank" onclick="trackOutboundLink('{{ sermon.download }}');" return false >Download</a></p>
+          <p><a href="{{ sermon.download }}" target="_blank" onclick="trackOutboundLink('{{ sermon.download }}'); return false;" >Download</a></p>
           <!-- <p><a href="{{ sermon.download }}" target="_blank" onclick="trackOutboundLink('{{ sermon.download }}');" return false >Download</a></p> -->
         </td>
       </tr>
