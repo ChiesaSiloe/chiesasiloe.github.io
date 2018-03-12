@@ -1,0 +1,5 @@
+---
+layout: default
+---
+
+{% include sermons-view.html year="2013" %}

@@ -1,0 +1,55 @@
+
+<div class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-5">
+            <span class="section-heading-upper">Scarica e ascolta tutte le</span>
+            <span class="section-heading-lower">Prediche</span>
+          </h2>
+          <table class="table table-striped">
+            <tr>
+              <td><b>Data</b></td>
+              <td><b>Titolo</b></td>
+              <td><b>Relatore</b></td>
+              <td><b>Streaming</b></td>
+              <td><b>Download</b></td>
+            </tr>
+            {% for sermon in site.data.sermons reversed %}
+            {% capture curYear %} {{ sermon.data | date: '%Y' }} {% endcapture %}
+
+            {% if curYear contains include.year %}
+
+            <tr>
+              <td>
+                <p>{{ sermon.data }}<p>
+                </td>
+                <td>
+                  <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample">
+                    {{ sermon.titolo }}
+                  </p>
+                  <div class="collapse" id="collapse-{{sermon.data}}">
+                    <p class="text-muted">
+                      {{ sermon.descrizione }}
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <p>{{ sermon.relatore }}</p>
+                </td>
+                <td>
+                  <p><a href="{{ sermon.streaming }}" target="_blank">Ascolta</a></p>
+                </td>
+                <td>
+                  <p><a href="{{ sermon.download }}" target="_blank">Scarica</a></p>
+                </td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
