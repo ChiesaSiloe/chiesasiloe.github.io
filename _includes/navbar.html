@@ -7,15 +7,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item active px-lg-4">
+        <li class="nav-item <?php if($currentPage =='Home'){echo 'active';}?> px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="/index.html">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item px-lg-4">
+        <li class="nav-item <?php if($currentPage =='Appuntamenti'){echo 'active';}?> px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="/appuntamenti">Appuntamenti</a>
         </li>
-        <li class="nav-item dropdown px-lg-4" >
+        <li class="nav-item <?php if($currentPage =='Lachiesa'){echo 'active';}?> dropdown px-lg-4" >
           <a class="nav-link dropdown-toggle text-uppercase text-expanded" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">La Chiesa</a>
           <div class="dropdown-menu " id="mainNav">
             <a class="dropdown-item nav-link text-uppercase text-center" id="mainNav" href="/lachiesa/#Visione">La Visione</a>
@@ -23,7 +23,7 @@
             <a class="dropdown-item nav-link text-uppercase text-center" id="mainNav" href="/lachiesa/#Formazione">La formazione</a>
           </div>
         </li>
-        <li class="nav-item dropdown px-lg-4">
+        <li class="nav-item <?php if($currentPage =='Attività'){echo 'active';}?> dropdown px-lg-4">
           <a class="nav-link dropdown-toggle text-uppercase text-expanded" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Attività</a>
           <div class="dropdown-menu" id="mainNav">
             <a class="dropdown-item nav-link text-uppercase text-center" id="mainNav" href="/attività/#generale">Generale</a>
@@ -32,7 +32,7 @@
             <a class="dropdown-item nav-link text-uppercase text-center" id="mainNav" href="/attività/#MIP">MIP</a>
           </div>
         </li>
-        <li class="nav-item dropdown px-lg-4">
+        <li class="nav-item <?php if($currentPage =='Prediche'){echo 'active';}?> dropdown px-lg-4">
           <a class="nav-link dropdown-toggle text-uppercase text-expanded" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Prediche</a>
           <div class="dropdown-menu" id="mainNav">
             {% for sermon in site.data.sermons reversed %}
@@ -44,7 +44,7 @@
             {% endfor %}
           </div>
         </li>
-        <li class="nav-item px-lg-4">
+        <li class="nav-item <?php if($currentPage =='Contatti'){echo 'active';}?> px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="/contatti">Contatti</a>
         </li>
       </ul>
