@@ -23,10 +23,10 @@
 
             <tr>
               <td>
-                <p>{{ sermon.data }}<p>
+                <p><i>{{ sermon.data }}</i><p>
                 </td>
                 <td>
-                  <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample"><b>
+                  <p class="text-uppercase" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample"><b>
                     {{ sermon.titolo }}
                   </b></p>
                   <div class="collapse" id="collapse-{{sermon.data}}">
@@ -36,7 +36,7 @@
                   </div>
                 </td>
                 <td>
-                  <p>{{ sermon.relatore }}</p>
+                  <p size="3">{{ sermon.relatore }}</p>
                 </td>
                 <td>
                   <p><a href="{{ sermon.streaming }}" target="_blank">Ascolta</a></p>
