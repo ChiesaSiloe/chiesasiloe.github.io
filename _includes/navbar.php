@@ -45,7 +45,7 @@
           </div>
         </li>
         <li class="nav-item px-lg-4 <?php if($currentPage =='Contatti'){echo 'active';}?>">
-          <a class="nav-link text-uppercase text-expanded" href="/contatti/contatti.php">Contatti</a>
+          <a class="nav-link text-uppercase text-expanded" href="/contatti/">Contatti</a>
         </li>
       </ul>
     </div>
