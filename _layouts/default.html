@@ -6,10 +6,13 @@
       <span class="site-heading-upper text-primary mb-3">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</span>
       <span class="site-heading-lower"><b>Gospel Forum Cosenza</b></span>
     </h1>
+    <a name=navbar>
     {% include navbar.html %}
-
+    </a>
     {{ content }}
-
+    
+    <a href="#navbar"><img align="right" src="/img/arrow-circle-up.svg" width="2%"></a>
+    
     {% include footer.html %}
 
 
