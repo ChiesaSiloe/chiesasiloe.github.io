@@ -44,7 +44,7 @@
             {% endfor %}
           </div>
         </li>
-        <li class="nav-item px-lg-4 {% if page.title=='Contatti' %}{echo 'active';}{% endif %}">
+        <li class="nav-item px-lg-4 <?php if($currentPage =='Contatti'){echo 'active';}?>">
           <a class="nav-link text-uppercase text-expanded" href="/contatti">Contatti</a>
         </li>
       </ul>
