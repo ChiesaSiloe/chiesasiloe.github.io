@@ -19,22 +19,35 @@ title: "Contatti"
                   Dio non ha nè creato nè voluto la sofferenza. E’ l’uomo che si crea da se tante sofferenze, ma rivolgendoci al creatore della vita, possiamo sperimentare come quel Gesù Cristo di 2000 anni fa è lo stesso ancora oggi – vuole aiutarti non solo nel campo spirituale, ma in tutti gli aspetti della tua vita.
                   Puoi domandare in questo modulo sia preghiera per richieste specifiche, sia un appuntamento con il pastore.
                 </font>
-                <hr>
+              <hr>
               <form action="https://formspree.io/ufficio@chiesasiloe.it" method="POST">
                <input type="hidden" name="_subject" value="Hai un nuovo messaggio dal sito!" />
                <div class="form-group">
-                 <label><h5>Il tuo nome</h5></label>
-                 <input type="text"  name="nome" class="form-control" placeholder="Il tuo nome">
+                 <select>
+                  <label><h5>Per cosa ci contatti?</h5></label>
+                  <option value="informazioni">Informazioni</option>
+                  <option value="prghiera-p">Preghiera personale</option>
+                  <option value="intercessione">Intercessione</option>
+                  <option value="altro">Altro...</option>
+                </select>
                </div>
                <div class="form-group">
-                 <label><h5>La tua email</h5></label>
-                 <input type="email"  name="_replyto" class="form-control" placeholder="La tua email per ricontattarti">
+                  <label><h5>Il tuo nome</h5></label>
+                  <input type="text"  name="nome" class="form-control" placeholder="Il tuo nome">
                </div>
                <div class="form-group">
-                 <label><h5>Testo</h5></label>
-                 <textarea class="form-control" name="name" rows="3"></textarea>
+                  <label><h5>La tua email</h5></label>
+                  <input type="email"  name="_replyto" class="form-control" placeholder="La tua email per ricontattarti">
                </div>
-                 <input type="submit" class="btn btn-default" value="Invia">
+               <div class="form-group">
+                  <label><h5>Testo</h5></label>
+                  <textarea class="form-control" name="name" rows="3"></textarea>
+               </div>
+               <div class="form-group">
+                  <label><h5>Vuoi lasciarci un contatto? Sentiti libero di inserire il tuo numero di telefono/cellulare</h5></label>
+                  <input type="text"  name="contact" class="form-control" placeholder="Contatti">
+               </div>
+                  <input type="submit" class="btn btn-default" value="Invia">
              </form>
             </h2>
           </div>
