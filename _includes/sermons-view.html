@@ -23,7 +23,7 @@
 
             <tr>
               <td>
-                <p><i>{{ sermon.data }}</i><p>
+                <p><i>{{ sermon.data | date: '%m-%d'}}</i><p>
                 </td>
                 <td>
                   <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample"><b>
