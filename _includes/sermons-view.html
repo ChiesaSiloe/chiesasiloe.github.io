@@ -1,3 +1,49 @@
+<script>
+  function dataToExplicit(a){
+    var num = a.slice(-2);
+    var mese;
+    switch(a.slice(5,7)){
+      case "01":
+        mese="Gennaio";
+        break;
+      case "02":
+        mese="Febbraio";
+        break;
+      case "03":
+        mese = "Marzo";
+        break;
+      case "04":
+        mese="Aprile";
+        break;
+      case "05":
+        mese="Maggio";
+        break;
+      case "06":
+        mese = "Giugno";
+        break;
+      case "07":
+        mese="Luglio";
+        break;
+      case "08":
+        mese="Agosto";
+        break;
+      case "09":
+        mese = "Settembre";
+        break;
+      case "10":
+        mese="Ottobre";
+        break;
+      case "11":
+        mese="Novembre";
+        break;
+      case "12":
+        mese = "Dicembre";
+        break;
+    }
+    return num + " " + mese;
+  }
+  
+</script>
 
 <div class="page-section cta">
   <div class="container">
@@ -23,7 +69,7 @@
 
             <tr>
               <td>
-                <p><i>{{ sermon.data}}</i><p>
+                <p><i>dataToExplicit({{ sermon.data}})</i><p>
                 </td>
                 <td>
                   <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-{{sermon.data}}" aria-expanded="false" aria-controls="collapseExample"><b>
