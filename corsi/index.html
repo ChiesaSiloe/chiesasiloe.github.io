@@ -91,7 +91,6 @@ title: "Corsi"
                             <h2 class="section-heading mb-5">
                                 <span class="section-heading-upper">Compila il form e clicca Invia per spedire la richiesta!</span>
                             </h2>
-                            <br>
                             <form action="https://formspree.io/ufficio@chiesasiloe.it" method="POST">
                                 <input type="hidden" name="_subject" value="Richiesta corso da chiesasiloe.it!" />
                                 <div class="form-group">
@@ -104,6 +103,7 @@ title: "Corsi"
                                     <textarea id="TextArea" class="form-control" name="text" rows="3"></textarea>
                                 </div>
                             <input type="submit" class="btn btn-default" value="Invia">
+                            <br>
                             <div><small>Dovrai confermare di non essere un bot tramite un semplice click</small></div>
                             </form>
                         </div>
@@ -118,6 +118,6 @@ title: "Corsi"
 <script>
     function foo(str){
         $('#myModal').modal('show');
-        $('#TextArea').val("Salve Pastore Marco, ti contatto per richiedere il corso " + $str + ".");
+        $('#TextArea').val('Salve Pastore Marco, ti contatto per richiedere il corso ' + $str );
     }
 </script>
