@@ -15,6 +15,7 @@ title: "Corsi"
                         <span class="section-heading-lower">Corsi</span>
                     </h2>
                     <span>Seleziona il corso che ti interessa e, dopo aver inserito una mail valida clicca su Invia. Nel giro di poche ore ti sarà inviata una mail di risposta contenente il link per scaricare il corso selezionato. È richiesta una descrizione del ruolo svolto nella propria chiesa all'interno del corpo del messaggio per accedere ai corsi di livello 2</span>
+                    <br>
                     <h6 class="section-heading mb-5">
                         <span class="section-heading-upper">Livello 1</span>
                     </h6>
@@ -60,6 +61,7 @@ title: "Corsi"
                         <span class="section-heading-upper">Livello 2</span>
                     </h6>
                     <span>I corsi del livello 2 sono accessibili solo per chi ha un ruolo di responsabilità in una chiesa. Ci riserviamo il diritto di valutare ogni richiesta caso per caso</span>
+                    <br>
                     <div class="row">
                         <div class="col-xl-4 align-items-center">
                             <img class="img-fluid" src="/img/corsi/Numerologia.png"/>
@@ -92,15 +94,12 @@ title: "Corsi"
                             <form action="https://formspree.io/ufficio@chiesasiloe.it" method="POST">
                              <input type="hidden" name="_subject" value="Richiesta corso da chiesasiloe.it!" />
                              <div class="form-group">
-                                <label><h5>Il tuo nome</h5></label>
                                 <input type="text"  name="nome" class="form-control" placeholder="Il tuo nome">
                              </div>
                              <div class="form-group">
-                                <label><h5>La tua email</h5></label>
                                 <input type="email"  name="_replyto" class="form-control" placeholder="La tua email per ricontattarti">
                              </div>
                              <div class="form-group">
-                                <label><h5>Testo</h5></label>
                                 <textarea class="form-control" name="text" rows="3"></textarea>
                              </div>
                             <input type="submit" class="btn btn-default" value="Invia">
@@ -121,9 +120,7 @@ title: "Corsi"
 </div>
 
 <script>
-    $(".img-fluid").click(function(){
-        $('#myModal').modal('show');
-    });
+
     function foo(str){
         $('#myModal').modal('show');
     }
