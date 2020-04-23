@@ -15,62 +15,84 @@ title: "Corsi"
                         <span class="section-heading-lower">Corsi</span>
                     </h2>
                     <h6 class="section-heading mb-5">
-                        <span class="section-heading-lower">Livello 1</span>
+                        <span class="section-heading-upper">Livello 1</span>
                     </h6>
                     <div class="row">
                         <div class="col-xl-4 align-items-center">
-                            <a><img class="img-fluid" src="/img/corsi/Pentateuco.png"/></a>
+                            <img onClick="foo(pentateuco)" class="img-fluid" src="/img/corsi/Pentateuco.png"/>
                         </div>
                         <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/PentateucoApprofondimento.png"/></a>
+                            <img class="img-fluid" src="/img/corsi/PentateucoApprofondimento.png"/>
                         </div>
                         <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/StoriciPoeti.png"/></a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/StoriciPoeti.png"/></a>
-                        </div>
-                        <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/StoriciPoetiApprofondimento.png"/></a>
-                        </div>
-                        <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/Profeti.png"/></a>
+                            <img class="img-fluid" src="/img/corsi/StoriciPoeti.png"/>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/ProfetiApprofondimento.png"/></a>
+                            <img class="img-fluid" src="/img/corsi/StoriciPoeti.png"/>
                         </div>
                         <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/Madonna.png"/></a>
+                            <img class="img-fluid" src="/img/corsi/StoriciPoetiApprofondimento.png"/>
                         </div>
                         <div class="col-xl-4">
-                            <a><img class="img-fluid" src="/img/corsi/Chiese.png"/></a>
+                            <img class="img-fluid" src="/img/corsi/Profeti.png"/>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <img class="img-fluid" src="/img/corsi/ProfetiApprofondimento.png"/>
+                        </div>
+                        <div class="col-xl-4">
+                            <img class="img-fluid" src="/img/corsi/Madonna.png"/>
+                        </div>
+                        <div class="col-xl-4">
+                            <img class="img-fluid" src="/img/corsi/Chiese.png"/>
                         </div>
                     </div>
                     <br>
                     <br>
                     <br>
                     <h6 class="section-heading mb-5">
-                        <span class="section-heading-lower">Livello 2</span>
+                        <span class="section-heading-upper">Livello 2</span>
                     </h6>
                     <div class="row">
                         <div class="col-xl-6 align-items-center">
-                            <a><img class="img-fluid" src="/img/corsi/Numerologia.png"/></a>
+                            <img class="img-fluid" src="/img/corsi/Numerologia.png"/>
                         </div>
                         <div class="col-xl-6">
-                            <a><img class="img-fluid" src="/img/corsi/Doni.png"/></a>
+                            <img class="img-fluid" src="/img/corsi/Doni.png"/>
                         </div>
                     </div>
-                    <h6 class="section-heading mb-5">
-                        <span class="section-heading-lower">Livello 3</span>
-                    </h6>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function foo(str){
+        $('#myModal').modal()
+    }
+</script>
