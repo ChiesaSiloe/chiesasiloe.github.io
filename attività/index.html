@@ -123,26 +123,7 @@ title: "Attività"
               <br>
               <br>
               <br>
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">maggio</span>
-                <span class="section-heading-lower">Attività</span>
-              </h2>            
-              <ul>             
-                <li><strong> Giovedì 28: </strong><br>
-                    <b>Virtual Brotherhood Special</b>
-                    <br> <b>Argomento: </b> LETTURA E COMMENTO DI ATTI 22 E 23
-                    <br> <b>Luogo: </b><i> Zoom ore 21.15</i>
-                </li>
-                <br>
-                
-                <li><strong> Sabato 30: </strong><br>
-                    <b>KILLING KRYPTONITE</b>
-                    <br> <b>Argomento: </b> LETTURA E COMMENTO DI KILLING KRYPTONITE 22 E 23
-                    <br> <b>Luogo: </b><i> Gospel Forum Cosenza, via De Pisis 7 Rende ore 19.00</i>
-                </li>
-                <br>
-                
-              </ul>
+              
             
             <h2 class="section-heading mb-4">
                 <span class="section-heading-upper">giugno</span>
@@ -199,6 +180,22 @@ title: "Attività"
                 <br>
                 
               </ul>
+              
+              {% raw %}
+              <div id="events">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-lower">Attività</span>
+                </h2>
+                  <ul>
+                    <li v-for="event in events">
+                      <b>{{ event.title }}</b>
+                      <br> <b>Argomento: </b> {{ event.description }}
+                      <br> <b>Luogo: </b><i> {{event.location}} {{ new Date(event.date).toLocaleDateString() }} {{ new Date(event.date).toLocaleTimeString() }}</i>
+                    </li>
+                    <br>
+                  </ul>    
+              </div>
+              {% endraw %}
           </div>
         </div>
       </div>
@@ -262,3 +259,24 @@ title: "Attività"
   </section>
 </a>
 
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+<script>
+  var app = new Vue({
+  el: '#events',
+  data: {
+    message: 'Hello Vue!',
+    events: []
+  },
+
+  mounted: function() {
+    axios
+      .get('https://script.google.com/macros/s/AKfycbzHvtDNGxYrVa61g918A2mC-keGJ_sbfk0WQ3VSE2gwwOqoG8hm/exec')
+      .then(response => (this.events = response.data))
+    } 
+})
+
+//console.log('it works!');
+</script>
