@@ -15,24 +15,22 @@
               <td><b>Link</b></td>
             </tr>
             {% raw %}
-              {{ sermons }}
-                <tr v-for="sermon in sermons">
-                  
+                <tr v-for="sermon in filtered">
                   <td>
                     <p><i>{{ new Date(sermon[0]).toLocaleDateString() }}</i><p>
                     </td>
                     <td>
-                      <p class="text-capitalize" role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapseExample"><b>
+                      <p class="text-capitalize" role="button" data-toggle="collapse" :href="'#collapse-' + new Date(sermon[0]).toLocaleDateString()" aria-expanded="false" aria-controls="collapseExample"><b>
                         {{ sermon[1] }}
                       </b></p>
-                      <div class="collapse" id="collapse-1">
+                      <div class="collapse" :id="'collapse-' + new Date(sermon[0]).toLocaleDateString()">
                         <p class="text-muted">
                           {{ sermon[2] }}
                         </p>
                       </div>
                     </td>
                     <td>
-                      <p><a href="https://facebook.com{{ sermon[3] }}" target="_blank">Guarda</a></p>
+                      <p><a :href="'https://facebook.com' +  sermon[3] " target="_blank">Guarda</a></p>
                     </td>
                 </tr>
             {% endraw %}
@@ -48,23 +46,23 @@
   
   <script>
     var app = new Vue({
-    el: '#sermons-table',
-    data: {
-      message: 'Hello Vue!',
-      sermons: [
-        ["2022-03-06T16:20:43.000Z","Innamorati di Gesù \"La fede in Gesù è una questione di amore per Dio e per il prossimo\" • Past. Marco Lienhard","Innamorati di Gesù \"La fede in Gesù è una questione di amore per Dio e per il prossimo\" • Past. Marco Lienhard","/gospelforumcosenza/videos/414765390408001/"],
-        ["2022-02-27T16:45:10.000Z","\"Spanderò il mio Spirito\"- Past.Marco Lienhard","Spanderò il  mio Spirito","/gospelforumcosenza/videos/5212408632136575/"],
-        ["2022-02-20T17:41:14.000Z","Come essere divini\" • Past. Marco Lienhard","Come essere divini\" • Past. Marco Lienhard","/gospelforumcosenza/videos/984925392430837/"],
-        ["2022-02-13T16:18:01.000Z","\"DNA del cristiano\" Anz.Brunello Fucilla","\"DNA del cristiano\" Anz.Brunello Fucilla","/gospelforumcosenza/videos/345583197425263/"],
-        ["2022-02-06T16:12:38.000Z","\"Gesù: per mezzo della morte alla vittoria - Identità V\" • Past. Marco Lienhard","Siamo morti al peccato in Cristo per vivere nella vittoria!","/gospelforumcosenza/videos/634554981109668/"]
-      ]
-    },
-  
-    mounted: function() {
-      axios
-        .get('https://script.google.com/macros/s/AKfycbxNEG5bs56MQKqOnnZznvvmGQYABpp_4YWvSiu9psMAUf2r1JxML2IQHpkCAZiMzQTb/exec')
-        .then(response => (this.sermons = response.data))
-      } 
+      el: '#sermons-table',
+      data: {
+        message: 'Hello Vue!',
+        sermons: []
+      },
+    
+      mounted: function() {
+        axios
+          .get('https://script.google.com/macros/s/AKfycbxNEG5bs56MQKqOnnZznvvmGQYABpp_4YWvSiu9psMAUf2r1JxML2IQHpkCAZiMzQTb/exec')
+          .then(response => (this.sermons = response.data))
+      },
+
+      computed: {
+        filtered: function() {
+          return this.sermons.filter((sermon) => new Date(sermon[0]).getFullYear() == {{ include.year }} && sermon[1].length > 0);
+        }
+      }
   })
   
   console.log('it works!');
