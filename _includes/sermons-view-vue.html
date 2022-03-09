@@ -12,12 +12,12 @@
             <tr>
               <td><b>Data</b></td>
               <td><b>Titolo</b></td>
-              <td><b>Link</b></td>
             </tr>
             {% raw %}
                 <tr v-for="sermon in filtered">
                   <td>
                     <p><i>{{ new Date(sermon[0]).toLocaleDateString() }}</i><p>
+                      <p><a :href="'https://facebook.com' +  sermon[3] " target="_blank">Guarda</a></p>
                     </td>
                     <td>
                       <p class="text-capitalize" role="button" data-toggle="collapse" :href="'#collapse-' + new Date(sermon[0]).toLocaleDateString()" aria-expanded="false" aria-controls="collapseExample"><b>
@@ -28,9 +28,6 @@
                           {{ sermon[2] }}
                         </p>
                       </div>
-                    </td>
-                    <td>
-                      <p><a :href="'https://facebook.com' +  sermon[3] " target="_blank">Guarda</a></p>
                     </td>
                 </tr>
             {% endraw %}
